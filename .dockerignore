@@ -3,63 +3,37 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-*.db
 
 # Virtual environments
 .env
 .venv
 venv/
 ENV/
-env/
 
-# Alembic cache
-alembic/*.pyc
-alembic/__pycache__/
-alembic/versions/__pycache__/
-
-# Logs
-*.log
-
-# Build / distribution
-dist/
-build/
-*.egg-info/
-.eggs/
-
-# Tests / Coverage
-.coverage
-.pytest_cache/
-htmlcov/
-coverage.xml
-.tox/
-
-# Type checker
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Git / VCS
-.git/
+# Git and IDE
+.git
 .gitignore
-.gitattributes
-
-# IDE / Editor
 .vscode/
 .idea/
-*.swp
-*.swo
-*.iml
-.DS_Store
 
-# Documentation
-*.md
-docs/
-README.md
+# Tests / Coverage
+tests/
+htmlcov/
+.coverage
+.pytest_cache/
 
-# CI/CD
-.github/
-.gitlab-ci.yml
+# Bytecode / packages
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
 
-# Other
-*.sqlite
-*.sqlite3
+# Docker
+Dockerfile
+docker-compose.yml
+
+# System / misc
+*.db
+*.log
+*.DS_Store
