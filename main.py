@@ -64,6 +64,9 @@ class DummyRedis:
     def delete(self, *args, **kwargs):
         pass
 
+    def ping(self, *args, **kwargs):
+        return True
+
 
 if REDIS_URL:
     try:
@@ -72,6 +75,7 @@ if REDIS_URL:
         redis_client = DummyRedis()
 else:
     redis_client = DummyRedis()
+
 
 
 
