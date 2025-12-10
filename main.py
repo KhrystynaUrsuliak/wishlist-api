@@ -51,8 +51,28 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379")
-redis_client = redis.from_url(REDIS_URL, decode_responses=True)
+REDIS_URL = os.getenv("REDIS_URL")
+
+
+class DummyRedis:
+    def get(self, *args, **kwargs):
+        return None
+
+    def setex(self, *args, **kwargs):
+        pass
+
+    def delete(self, *args, **kwargs):
+        pass
+
+
+if REDIS_URL:
+    try:
+        redis_client = redis.from_url(REDIS_URL, decode_responses=True)
+    except Exception:
+        redis_client = DummyRedis()
+else:
+    redis_client = DummyRedis()
+
 
 
 
